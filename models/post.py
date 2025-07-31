@@ -13,7 +13,7 @@ post_likes = Table(
 )
 
 liked_by = relationship(
-    "blog.models.user.User",
+    "models.user.User",
     secondary=post_likes,
     back_populates="liked_posts"
 )
@@ -30,5 +30,5 @@ class Post(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     is_public = Column(Boolean, default=True)
     user = relationship("User", back_populates="posts")
-    liked_by = relationship("blog.models.user.User", secondary=post_likes, back_populates="liked_posts")
+    liked_by = relationship("models.user.User", secondary=post_likes, back_populates="liked_posts")
 

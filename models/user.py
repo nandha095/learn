@@ -46,10 +46,10 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     is_private = Column(Boolean, default=False) 
 
-    posts = relationship("blog.models.post.Post", back_populates="user")
+    posts = relationship("models.post.Post", back_populates="user")
 
     liked_posts = relationship(
-        "blog.models.post.Post",
+        "models.post.Post",
         secondary=post_likes,
         back_populates="liked_by"
     )
