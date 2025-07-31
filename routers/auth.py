@@ -3,13 +3,13 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from blog.database import get_db
-from blog.services import otp as otp_service
-from blog.services import email as email_service
-from blog.utils.jwt import create_token
-from blog.utils.hash import get_password_hash, verify_password
-from blog.models.user import User
-from blog.schemas.user import (
+from database import get_db
+from services import otp as otp_service
+from services import email as email_service
+from utils.jwt import create_token
+from utils.hash import get_password_hash, verify_password
+from models.user import User
+from schemas.user import (
     OTPRequest,
     RegisterRequest,
     LoginUser,
@@ -17,7 +17,7 @@ from blog.schemas.user import (
     LoginOTPVerify,
     ResetPasswordRequest
 )
-from blog.utils.hash import get_password_hash
+from utils.hash import get_password_hash
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
@@ -64,7 +64,7 @@ def register_user(payload: RegisterRequest, db: Session = Depends(get_db)):
 
 
 # blog/routers/auth.py
-from blog.schemas.user import LoginUser
+from schemas.user import LoginUser
 
 # @router.post("/login")
 # def login_user(payload: LoginUser, db: Session = Depends(get_db)):

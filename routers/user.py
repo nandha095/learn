@@ -2,16 +2,16 @@
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from blog.database import get_db
-from blog.utils.jwt import get_current_user
-from blog.models import user as models
-from blog.schemas.post import PostStatusUpdate
-from blog.models import user as user_model
-from blog.models import post as post_model
-from blog.models.user import User
+from database import get_db
+from utils.jwt import get_current_user
+from models import user as models
+from schemas.post import PostStatusUpdate
+from models import user as user_model
+from models import post as post_model
+from models.user import User
 from fastapi import APIRouter, Depends
-from blog.utils.jwt import get_current_user
-from blog.schemas.user import UpdatePrivacyRequest
+from utils.jwt import get_current_user
+from schemas.user import UpdatePrivacyRequest
 
 
 router = APIRouter(prefix="/me", tags=["User"])

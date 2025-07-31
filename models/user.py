@@ -1,7 +1,7 @@
 # blog/models/user.py
 from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey, Table
 from sqlalchemy.orm import relationship
-from blog.database import Base
+from database import Base
 from datetime import datetime
 
 # Association table for followers

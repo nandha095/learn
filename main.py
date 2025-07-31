@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Response, Header
-from blog.database import engine, Base
-from blog.routers import auth, user, post
-from blog.models import user as user_model, post as post_model
-from blog.routers import auth, user
+from database import engine, Base
+from routers import auth, user, post
+from models import user as user_model, post as post_model
+from routers import auth, user
 from fastapi.responses import JSONResponse
-from blog import models
+import models
 from typing import Optional
 from pydantic import BaseModel
 

@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from blog.database import get_db
-from blog.models import post as post_model, user as user_model
-from blog.schemas.post import PostCreate, PostOut, PostUpdate
-from blog.utils.jwt import get_current_user
-from blog.schemas.post import PostStatusUpdate
-from blog.schemas.post import PostUpdate
-from blog.schemas.post import PostOut
-from blog.models.post import Post
+from database import get_db
+from models import post as post_model, user as user_model
+from schemas.post import PostCreate, PostOut, PostUpdate
+from utils.jwt import get_current_user
+from schemas.post import PostStatusUpdate
+from schemas.post import PostUpdate
+from schemas.post import PostOut
+from models.post import Post
 from fastapi.responses import JSONResponse
 
 

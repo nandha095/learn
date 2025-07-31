@@ -4,8 +4,8 @@ from jose import JWTError, jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from blog.database import get_db
-from blog.models.user import User
+from database import get_db
+from models.user import User
 
 # SECRET key and algorithm
 SECRET_KEY = "140d1c68-b0bf-4dfb-964a-eaabb396be32"  
